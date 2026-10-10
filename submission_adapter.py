@@ -4,7 +4,7 @@ Each function is a thin wrapper around the implementation in pa2/.
 """
 from __future__ import annotations
 
-from pa2 import data, logprobs
+from pa2 import data, dpo, logprobs
 
 
 def build_sft_batch(tokenizer, prompts, responses, max_length):
@@ -41,7 +41,9 @@ def compute_dpo_loss_from_logps(
     beta,
 ):
     """Return the scalar mean DPO objective from per-example log probabilities."""
-    raise NotImplementedError("Day 2")
+    return dpo.compute_dpo_loss_from_logps(
+        policy_chosen_logps, policy_rejected_logps,
+        reference_chosen_logps, reference_rejected_logps, beta)
 
 
 def compute_dpo_loss(
@@ -55,4 +57,6 @@ def compute_dpo_loss(
     max_length,
 ):
     """Return a scalar mean DPO loss with a frozen reference computation."""
-    raise NotImplementedError("Day 2")
+    return dpo.compute_dpo_loss(
+        policy_model, reference_model, tokenizer, prompts,
+        chosen_responses, rejected_responses, beta, max_length)
