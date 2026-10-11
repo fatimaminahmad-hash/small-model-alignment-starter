@@ -1,0 +1,1 @@
+greedy, max_new_tokens=256, extra flags: --repetition_penalty 1.1
