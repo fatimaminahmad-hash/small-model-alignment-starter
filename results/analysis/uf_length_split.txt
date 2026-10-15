@@ -1,0 +1,109 @@
+UltraFeedback DPO vs SFT, AlpacaEval 300 prompts, judge google/gemini-3.6-flash (general rubric)
+all: n=300 dpo_wins=90 ties=72 sft_wins=138 win_rate_excl_ties=0.395
+DPO answer longer: n=211 dpo_wins=55 ties=40 sft_wins=116 win_rate_excl_ties=0.322
+DPO answer shorter: n=75 dpo_wins=32 ties=24 sft_wins=19 win_rate_excl_ties=0.627
+same length: n=14 dpo_wins=3 ties=8 sft_wins=3 win_rate_excl_ties=0.500
+median words: dpo 168.5 sft 117.0
+
+Length = whitespace-split word count of each response.
+
+[DPO LOST] id=alpaca_2 Hi, my sister and her girlfriends want me to play kickball with them. Can you explain how the game is played, so they do
+DPO: Sure! Here's a simple description of how kickball is played:
+
+1. The ball is thrown by one player (the kicker) from a designated spot on the field.
+
+2. The other players (the bases) are positioned at various points aroun
+SFT: Sure! Here's a simple description of how kickball works:
+
+1. The ball is thrown by one player from the pitcher's mound.
+2. The batter runs towards the base where the ball will be hit.
+3. The batter hits the ball into the
+
+[DPO LOST] id=alpaca_3 What is some cool music from the 1920s?
+DPO: Some of the most iconic and influential music from the 1920s includes:
+
+1. "The Star-Spangled Banner" by Francis Scott Key - This patriotic song became a symbol of American independence during the Civil War.
+
+2. "The Sta
+SFT: Some of the most famous and iconic songs from the 1920s include "The Star-Spangled Banner," "Take the A Train," "I'm a Believer," "You Shook Me," "Don't Stop Believin'" and "On the Road." These songs were popular during 
+
+[DPO LOST] id=alpaca_6 Hi, I'm trying to solve a crossword puzzle, but I've never done one of these before. Can you help me out?
+DPO: Sure! Here's a simple example of how to solve a basic crossword puzzle:
+
+```
+A B C D E F G H
+I 2 3 4 5 6 7 8
+J K L M N O P Q
+R S T U V W X Y Z
+```
+
+To solve this puzzle, start by looking for words that fit the grid and a
+SFT: Sure! What kind of crossword puzzle are you looking for?
+
+[DPO WON] id=alpaca_0 What are the names of some famous actors that started their careers on Broadway?
+DPO: 1. Marlon Brando
+2. James Dean
+3. Audrey Hepburn
+4. Robert De Niro
+5. Dustin Hoffman
+6. Tom Hiddleston
+7. Michael Fassbender
+8. John Travolta
+9. Robert De Niro Jr.
+10. Tom Hardy
+11. Scarlett Johansson
+12. Matthew McConau
+SFT: Some famous actors who started their careers on Broadway include:
+
+1. Marlon Brando
+2. Robert De Niro
+3. Tom Hiddleston
+4. Michael Fassbender
+5. John Travolta
+6. James Earl Jones
+7. Robert De Niro
+8. Tom Hiddleston
+9. Mi
+
+[DPO WON] id=alpaca_11 I'm trying to teach myself to have nicer handwriting. Can you help?
+DPO: Sure, I'd be happy to help! Here are some tips for improving your handwriting:
+
+1. Practice writing regularly: The more you write, the better you'll get at it.
+
+2. Use a good pen or pencil: Choose a pen or pencil that is
+SFT: Sure, I can definitely help with that! Here are some tips for improving your handwriting:
+
+1. Practice writing regularly: The more you write, the better you will get at it.
+
+2. Use a pencil or pen: A pencil or pen is eas
+
+[DPO WON] id=alpaca_21 What are some artists I might like if I like Billy Joel?
+DPO: 1. Bob Dylan
+2. Joan Baez
+3. John Denver
+4. Neil Young
+5. Bob Weir
+6. Simon & Garfunkel
+7. The Band
+8. Bruce Springsteen
+9. The Beatles
+10. The Rolling Stones
+11. The Who
+12. The Eagles
+13. The Smashing Pumpkins
+14. Nirv
+SFT: 1. Bob Dylan
+2. Joan Baez
+3. John Denver
+4. Neil Young
+5. Bruce Springsteen
+6. Bob Weir
+7. The Band
+8. The Beatles
+9. The Rolling Stones
+10. Jimi Hendrix
+11. Led Zeppelin
+12. Pink Floyd
+13. The Who
+14. The Eagles
+15. The
