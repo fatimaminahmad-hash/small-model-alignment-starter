@@ -198,17 +198,15 @@ python scripts/generate_persona.py --generator lora_lr1e-4 --adapter outputs/lor
 # likewise for 5e-5 (persona_lora.json) and 2e-4 (persona_lora_lr2e-4.json)
 ```
 
-Pair files and judging use the same pairing script and the persona judge (four verdicts per prompt: style, usefulness, safety, overall):
+Pair files are built with the same pairing script:
 
 ```bash
 python scripts/build_pairs.py --dpo results/gen_persona/persona_lora_lr1e-4.json \
   --sft results/gen_persona/persona_base.json --dpo_name lora_lr1e-4 --sft_name base \
   --out results/pairs/persona_lr1e-4_vs_base_pairs.jsonl
-Persona judging used a four-verdict rubric (style, usefulness, safety, overall) run in a Kaggle notebook; the judged outputs are in results/judged/persona_*. \
-  --pairs_path results/pairs/persona_lr1e-4_vs_base_pairs.jsonl \
-  --output_path results/judged/persona_lr1e-4_vs_base_judged.jsonl \
-  --failures_path results/judged/persona_lr1e-4_vs_base_judged_failures.jsonl
 ```
+
+Persona judging used a four-verdict rubric (style, usefulness, safety, overall) run in a Kaggle notebook; the judged outputs and failure logs are in `results/judged/persona_*`. The judging notebook code is not included in this repository.
 
 The LoRA adapter (lr 2e-4) was also judged against its base on HH-300 with the safety rubric (`results/judged/hh_lora_lr2e-4_vs_base_judged.jsonl`).
 
