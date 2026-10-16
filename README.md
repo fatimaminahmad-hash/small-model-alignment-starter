@@ -33,7 +33,6 @@ scripts/
   judge_pairwise_kaggle.py   # pairwise judge (Kaggle model proxy), resumable
   train_lora_dpo.py          # TRL DPOTrainer + PEFT LoRA (persona)
   generate_persona.py        # generation for SmolLM2 (+ optional LoRA adapter)
-  judge_persona_kaggle.py    # four-verdict persona judge (style/useful/safe/overall)
   plot_metrics.py            # training plots
 eval_sets/
   alpaca_eval_300_seed42.json
@@ -205,7 +204,7 @@ Pair files and judging use the same pairing script and the persona judge (four v
 python scripts/build_pairs.py --dpo results/gen_persona/persona_lora_lr1e-4.json \
   --sft results/gen_persona/persona_base.json --dpo_name lora_lr1e-4 --sft_name base \
   --out results/pairs/persona_lr1e-4_vs_base_pairs.jsonl
-python scripts/judge_persona_kaggle.py \
+Persona judging used a four-verdict rubric (style, usefulness, safety, overall) run in a Kaggle notebook; the judged outputs are in results/judged/persona_*. \
   --pairs_path results/pairs/persona_lr1e-4_vs_base_pairs.jsonl \
   --output_path results/judged/persona_lr1e-4_vs_base_judged.jsonl \
   --failures_path results/judged/persona_lr1e-4_vs_base_judged_failures.jsonl
